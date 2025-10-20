@@ -9,7 +9,18 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 exit
 flatpak install com.vscodium.codium
 
-
+// sûr que ça marche !
+apt install ncdu (voit stockage et memoire)
+// fond écran
+crée fichier .desktop dans /etc/xdg/autostart
+nano (fichier)
+dans fichier mettre :
+[Desktop Entry]
+Type=Application
+Name=Set Custom Wallpaper
+Exec=pcmanfm --set-wallpaper /usr/share/backgrounds/custom_wallpaper.jpg --wallpaper-mode=fit
+OnlyShowln=LXDE;
+X-GNOME-Autostart-enabled=true
 
 
 https://flathub.org/fr/setup/Ubuntu
