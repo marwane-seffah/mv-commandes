@@ -21,7 +21,7 @@ dans fichier mettre :
 Type=Application
 Name=Set Custom Wallpaper
 Exec=pcmanfm --set-wallpaper /usr/share/backgrounds/custom_wallpaper.jpg --wallpaper-mode=fit
-OnlyShowln=LXDE;
+OnlyShowIn=LXDE;
 X-GNOME-Autostart-enabled=true
 
 
