@@ -14,7 +14,9 @@ apt install ncdu (voit stockage et memoire)
 // fond écran
 crée fichier .desktop dans /etc/xdg/autostart
 nano (fichier)
-dans fichier mettre :
+
+dans fichier mettre : 
+
 [Desktop Entry]
 Type=Application
 Name=Set Custom Wallpaper
