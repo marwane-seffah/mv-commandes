@@ -24,6 +24,7 @@ Exec=pcmanfm --set-wallpaper /usr/share/backgrounds/custom_wallpaper.jpg --wallp
 OnlyShowIn=LXDE;
 X-GNOME-Autostart-enabled=true
 
+chmod 644 /etc/xdg/autostart/(fichier).desktop
 
 https://flathub.org/fr/setup/Ubuntu
 https://doc.ubuntu-fr.org/visual_studio_code
