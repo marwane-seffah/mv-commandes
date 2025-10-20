@@ -18,6 +18,19 @@ sudo apt install -y flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo --system
 exit
 flatpak install -y flathub com.vscodium.codium
+
+///
+[Unit]
+Description=Run first boot setup script
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/firstboot.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
 \\\
 
 // sûr que ça marche !
