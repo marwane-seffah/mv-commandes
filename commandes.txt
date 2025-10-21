@@ -69,7 +69,6 @@ nano /usr/local/bin/system-backup.sh
 // add into .bashrc
 
 apt install borgbackup
-apt install crontab
 
 borg init --encryption=repokey /backupdrive/borg
     
