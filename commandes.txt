@@ -79,6 +79,7 @@ sudo crontab -e
 
 
 ```
+#!/bin/bash
 // Script
 
 export BORG_REPO= "/backupdrive/borg"
