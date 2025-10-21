@@ -9,19 +9,6 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 exit
 flatpak install -y flathub com.vscodium.codium
 
-///
-[Unit]
-Description=Run first boot setup script
-After=network.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/firstboot.sh
-RemainAfterExit=true
-
-[Install]
-WantedBy=multi-user.target
-\\\
 
 // sûr que ça marche !
 apt install ncdu (voit stockage et memoire)
@@ -58,21 +45,21 @@ Sauveguarde
 ```
 // chroot
 
-touch /usr/local/bin/system-backup.sh
 touch /var/log/backup.log
 nano /usr/local/bin/system-backup.sh
+sudo chmod 755 /usr/local/bin/system-backup.sh
 // add script
-```
 
-
-```
-// add into .bashrc
 
 apt install borgbackup
 
-borg init --encryption=repokey /backupdrive/borg
+mkdir /var/backupdrive
+mkdir /var/backupdrive/borg
+chown root:root /var/backupdrive/borg
+chmod 700 /var/backupdrive/borg
+
+borg init --encryption=repokey /var/backupdrive/borg
     
-sudo chmod +x /usr/local/bin/system-backup.sh
 sudo crontab -e
 0 3 * * * /usr/local/bin/system-backup.sh
 ```
@@ -82,10 +69,10 @@ sudo crontab -e
 #!/bin/bash
 // Script
 
-export BORG_REPO= "/backupdrive/borg"
+export BORG_REPO="/var/backupdrive/borg"
 LOGFILE="/var/log/backup.log"
 
-borg create                         \
+borg create $BORG_REPO::'{hostname}-{now}'               \
     --verbose                       \
     --filter AME                    \
     --list                          \
@@ -96,15 +83,14 @@ borg create                         \
     --exclude 'home/*/.cache/*'     \
     --exclude 'var/tmp/*'           \
                                     \
-    ::'{hostname}-{now}'            \
     /etc                            \
     /home                           \
     /root                           \
     /var
 
-info "Pruning repository"
+echo "Pruning repository"
 
-borg prune                          \
+borg prune $BORG_REPO                         \
     --list                          \
     --glob-archives '{hostname}-*'  \
     --show-rc                       \
@@ -113,7 +99,7 @@ borg prune                          \
     --keep-monthly  6
 prune_exit=$?
 
-info "Compacting repository"
+echo "Compacting repository"
 borg compact
 
 borg check $BORG_REPO >> $LOGFILE 2>&1
