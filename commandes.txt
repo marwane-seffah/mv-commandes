@@ -44,6 +44,13 @@ https://doc.ubuntu-fr.org/visual_studio_code
 https://forums.whonix.org/t/flatpak-install-user-error-no-remote-refs-found/20392/5
 
 
+server web :
+sudo mkdir -p /etc/skel/www
+sudo chmod 755 /etc/skel/www
+sudo cp -a /etc/apache2/sites-available/default-ssl.conf \
+           /etc/apache2/sites-available/pa-ubuntu-vm.conf
+
+
 ------------------------------------------------
 Sauveguarde
 
