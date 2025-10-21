@@ -1,14 +1,3 @@
-sudo apt update
-sudo apt install apache2 libapache2-mpm-itk (-y
-sudo apt install mariadb-server mariadb-client (-y
-sudo apt install libapache2-mod-php php-mysql (-y
-sudo apt install phpmyadmin -y
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo --system
-exit
-flatpak install com.vscodium.codium
-
 \\\
 sudo apt install -y apache2 libapache2-mpm-itk
 sudo apt install -y mariadb-server mariadb-client
@@ -54,9 +43,6 @@ https://flathub.org/fr/setup/Ubuntu
 https://doc.ubuntu-fr.org/visual_studio_code
 https://forums.whonix.org/t/flatpak-install-user-error-no-remote-refs-found/20392/5
 
-
-# dans bashrc
-sudo mariadb-secure-installation
 
 ------------------------------------------------
 Sauveguarde
