@@ -66,7 +66,7 @@ Sauveguarde
 
 touch /usr/local/bin/system-backup.sh
 touch /var/log/backup.log
-vim /usr/local/bin/system-backup.sh
+nano /usr/local/bin/system-backup.sh
 // add script
 ```
 
