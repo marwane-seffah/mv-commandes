@@ -11,6 +11,7 @@ flatpak install -y flathub com.vscodium.codium
 
 wget -O /tmp/ublock-origin.xpi \
 "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+cp /tmp/ublock-origin.xpi /usr/lib/abrowser/distribution/extensions/ublock0@raymondhill.net.xpi
 
 
 
