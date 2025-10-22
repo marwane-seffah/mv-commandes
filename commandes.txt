@@ -13,7 +13,9 @@ wget -O /tmp/ublock-origin.xpi \
 "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
 cp /tmp/ublock-origin.xpi /usr/lib/abrowser/distribution/extensions/ublock0@raymondhill.net.xpi
 
-
+sudo apt install software-properties-common
+sudo add-apt-repository -y ppa:team-xbmc/ppa
+sudo apt install kodi
 
 // sûr que ça marche !
 apt install ncdu (voit stockage et memoire)
