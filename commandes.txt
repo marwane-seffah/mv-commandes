@@ -12,6 +12,8 @@ flatpak install -y flathub com.vscodium.codium
 wget -O /tmp/ublock-origin.xpi \
 "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
 cp /tmp/ublock-origin.xpi /usr/lib/abrowser/distribution/extensions/ublock0@raymondhill.net.xpi
+cp /usr/lib/abrowser/distribution/extensions/ublock0@raymondhill.net.xpi /usr/lib/abrowser/extensions/
+
 
 sudo apt install software-properties-common
 sudo add-apt-repository -y ppa:team-xbmc/ppa
