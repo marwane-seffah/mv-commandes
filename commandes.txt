@@ -9,6 +9,10 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 exit
 flatpak install -y flathub com.vscodium.codium
 
+wget -O /tmp/ublock-origin.xpi \
+"https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+
+
 
 // sûr que ça marche !
 apt install ncdu (voit stockage et memoire)
